@@ -141,6 +141,13 @@ function onGameLoaded(game) {
 // - eatFrom(windowName, itemName)
 //   Makes the character eat the specified item from the specified window
 //   Returns `true` on success or `false` otherwise
+//
+// - takeItemFromStockpile()
+//   Takes item from an opened stockpile
+//   Returns `true` on success or `false` otherwise
+//
+// - getStockpileInfo()
+//   Returns an object that represents information about an opened stockpile (it has `resBaseName`, `used` and `total` properties) or `null` if there was an error
 // 
 // - logout()
 //   Logs out from the current account
