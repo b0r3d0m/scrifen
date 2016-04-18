@@ -119,17 +119,28 @@ function onGameLoaded(game) {
 //   Transfers an item with the specified name from the specified window to the character's inventory
 //   Returns `true` on success or `false` otherwise
 //
-// - transferItemsFrom(windowName, itemName)
+// - transferItemsFrom(windowName, itemsName)
 //   The same as `transferItemFrom` function but transfers all objects with the specified name
 //   Returns `true` on success or `false` otherwise
 //
 // - getStamina()
 //   Returns stamina of the player or -1 if there was an error
 //
+// - getEnergy()
+//   Returns energy of the player / 100 or -1 if there was an error
+//
 // - drink()
 //   Makes the character drink water from any of the following containers -- bucket, kuksa, waterskin and waterflask (from both character's inventory and equipment screen)
 //   NOTE that this method, unlike many others, is synchronous
 //        This is a result of its "adaptive" behavior -- it tries to drink from one container and if it's not enough it switches to the next one
+//
+// - eat(itemName)
+//   Makes the character eat the specified item from its inventory
+//   Returns `true` on success or `false` otherwise
+//
+// - eatFrom(windowName, itemName)
+//   Makes the character eat the specified item from the specified window
+//   Returns `true` on success or `false` otherwise
 // 
 // - logout()
 //   Logs out from the current account
