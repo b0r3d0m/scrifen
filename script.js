@@ -163,6 +163,13 @@ function onGameLoaded(game) {
 //
 // - getStockpileInfo()
 //   Returns an object that represents information about an opened stockpile (it has `resBaseName`, `used` and `total` properties) or `null` if there was an error
+//
+// - createStockpileWithItem(itemName, x, y)
+//   Creates a stockpile with the specified item at (x, y) coordinates
+//   Returns `true` on success or `false` otherwise
+//   NOTE However, there are a lot of situations when this function can fail but still return `true` as a result
+//        For example, createStockpileWithItem, unlike goTo and pickItem functions, doesn't use pathfinding (romovs didn't implement it yet)
+//        The rule of thumb here is to wait for some time (this function, like many others, is asynchronous) and call the `getStockpileInfo` function to check whether we actually opened a stockpile menu
 // 
 // - logout()
 //   Logs out from the current account
