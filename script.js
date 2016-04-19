@@ -29,7 +29,15 @@
 // User-defined "global" variables
 ///////////////////////
 
+/**
+ * Game object from the {@link onGameLoaded} function
+ * @type {Game}
+ */
 var g = null;
+/**
+ * ID of the autowalking timer
+ * @type {Number}
+ */
 var autoWalkingTimerId = null;
 
 ///////////////////////
@@ -39,8 +47,12 @@ var autoWalkingTimerId = null;
 // NOTE that you should define all API event functions, even if you don't want to handle some of them
 //      Just do nothing if you don't want to process such events
 
-// It is fired when the login screen appeared
-// You should return an object with the `login` and `password` properties set to the appropriate values
+/**
+ * It is fired when the login screen appeared
+ * @return {Object} credentials - Object that contains information about login and password to log in with
+ * @return {String} credentials.login - The actual login
+ * @return {String} credentials.password - The actual password
+ */
 function onLogin() {
   print('Logging in...');
 
@@ -51,16 +63,19 @@ function onLogin() {
   return credentials;
 }
 
-// It is fired 3 seconds after the character select. screen appeared
-// You should return a name of the character you want to select
+/**
+ * It is fired 3 seconds after the character select. screen appeared
+ * @return {String} characterName - Name of the character to select
+ */
 function onCharSelect() {
   print('Selecting character...');
 
   return 'somechar';
 }
 
-// It is fired 10 seconds after the selected character entered the world
-// `game` is the main interface to the client API, so generally you should keep a reference to it somewhere in the script
+/** It is fired 10 seconds after the selected character entered the world
+ * @param {Object} game This is the main interface to the client API, so generally you should keep a reference to it somewhere in the script
+ */
 function onGameLoaded(game) {
   print('Game loaded');
 
@@ -165,7 +180,13 @@ function onGameLoaded(game) {
 // NOTE that any functions that work with items' names expect an item's base resource name
 //      So instead of 'Dried Fox Hide' you should pass 'foxhide', instead of 'Raw Fox Hide' you should pass 'foxhide-blood' etc
 
-// It is fired when a foragable curio was found (once for each of them)
+/** It is fired when a foragable curio was found (once for each of them)
+ * @param {Number} id ID of the curio
+ * @param {String} name Name of the curio
+ * @param {Object} coords Coordinates of the curio
+ * @param {Number} coords.x x coordinate of the curio
+ * @param {Number} coords.y y coordinate of the curio
+ */
 function onCurioFound(id, name, coords) {
   if (g == null) {
     return;
@@ -193,7 +214,13 @@ function onCurioFound(id, name, coords) {
   }, 10000);
 }
 
-// It is fired when a creature was encountered (once for each of them)
+/** It is fired when a creature was encountered (once for each of them)
+ * @param {Number} id ID of the creature 
+ * @param {String} name Name of the creature
+ * @param {Object} coords Coordinates of the creature
+ * @param {Number} coords.x x coordinate of the creature
+ * @param {Number} coords.y y coordinate of the creature
+ */
 function onCreatureFound(id, name, coords) {
   if (g == null) {
     return;
@@ -212,7 +239,13 @@ function onCreatureFound(id, name, coords) {
   }
 }
 
-// It is fired when another player was encountered (once for each of them)
+/** It is fired when another player was encountered (once for each of them)
+ * @param {Number} id ID of the player
+ * @param {String} name Name of the player
+ * @param {Object} coords Coordinates of the player
+ * @param {Number} coords.x x coordinate of the creature
+ * @param {Number} coords.y y coordinate of the creature
+ */
 function onPlayerFound(id, isKin, coords) {
   if (g == null) {
     return;
@@ -235,7 +268,7 @@ function onPlayerFound(id, isKin, coords) {
 // User-defined functions
 ///////////////////////
 
-// Starts autowalking timer that will move character x+50, y+50 every second
+/** Starts autowalking timer that will move character x+50, y+50 every second */
 function startAutoWalking() {
   autoWalkingTimerId = setInterval(function() {
     var playerCoords = g.getPlayerCoords();
@@ -243,7 +276,7 @@ function startAutoWalking() {
   }, 1000);
 }
 
-// Stops autowalking timer
+/** Stops autowalking timer */
 function stopAutoWalking() {
   clearInterval(autoWalkingTimerId);
   // NOTE that clearInterval (nor clearTimeout) does NOT wait for the currently executing task to finish
@@ -251,12 +284,18 @@ function stopAutoWalking() {
   sleep(2000);
 }
 
-// Determines whether the specified animal is aggresive (NOTE that this function is incomplete)
+/** Determines whether the specified animal is aggresive (NOTE that this function is incomplete)
+ * @param {String} animal Name of the animal to check
+ * @return {Boolean} true if the specified animal is aggressive or false otherwise
+ */
 function isAggr(animal) {
   return animal == "badger" || animal == "lynx" || animal == "bat" || animal == "bear" || animal == "boar"; // etc
 }
 
-// Returns a mental weight of the specified curio (NOTE that this function is incomplete)
+/** Returns a mental weight of the specified curio (NOTE that this function is incomplete)
+ * @param {String} curioName Name of the curio
+ * @return {Number} Mental weight of the specified curio
+ */
 function getMentalWeight(curioName) {
   var mws = {
     'dandelion': 1
@@ -265,15 +304,20 @@ function getMentalWeight(curioName) {
   return mws[curioName];
 }
 
-// Prints the specified message to stdout
+/** Prints the specified message to stdout
+ * @param {String} msg Message to print
+ */
 function print(msg) {
   java.lang.System.out.println(msg);
 }
 
-// Sleeps for the specified amount of milliseconds
-// NOTE that this function should be used carefully
-//      It prevents the event loop from triggering new actions until you finally return from the API event function
-//      If possible, use `setTimeout` and `setInterval` functions instead
+/**
+ * Sleeps for the specified amount of milliseconds <br>
+ * NOTE that this function should be used carefully <br>
+ *      It prevents the event loop from triggering new actions until you finally return from the API event function <br>
+ *      If possible, use `setTimeout` and `setInterval` functions instead <br>
+ * @param {Number} millisecs Amount of milliseconds to sleep for
+ */
 function sleep(millisecs) {
   java.lang.Thread.sleep(millisecs);
 }
