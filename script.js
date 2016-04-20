@@ -113,7 +113,10 @@ function onGameLoaded(game) {
 //   Makes the character travel to its hearth fire
 //
 // - getMapObjects(name)
-//   Returns an array of objects with `id` and `coords` properties
+//   Returns an array of map objects with the specified name (each of them has `name`, `id` and `coords` properties)
+//
+// - getAllMapObjects()
+//   Returns an array of map objects (each of them has `name`, `id` and `coords` properties)
 //
 // - mapObjectRightClick(id)
 //   Clicks an object with the specified ID via the right mouse button
@@ -170,7 +173,7 @@ function onGameLoaded(game) {
 //   NOTE However, there are a lot of situations when this function can fail but still return `true` as a result
 //        For example, createStockpileWithItem, unlike goTo and pickItem functions, doesn't use pathfinding (romovs didn't implement it yet)
 //        The rule of thumb here is to wait for some time (this function, like many others, is asynchronous) and call the `getStockpileInfo` function to check whether we actually opened a stockpile menu
-// 
+//
 // - logout()
 //   Logs out from the current account
 // 
@@ -269,6 +272,14 @@ function onPlayerFound(id, isKin, coords) {
       startAutoWalking();
     }, 10000);
   }
+}
+
+/** It is fired when the flower menu appears (the one that opens after right clicking an object)
+ * @param {Array} options Available flower menu options
+ * @return {String} Text of the option to select (for example, "Pick cone"), or an empty string if you don't want to select anything
+ */
+function onFlowerMenuOpen(options) {
+  return '';
 }
 
 ///////////////////////
