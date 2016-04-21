@@ -174,6 +174,41 @@ function onGameLoaded(game) {
 //        For example, createStockpileWithItem, unlike goTo and pickItem functions, doesn't use pathfinding (romovs didn't implement it yet)
 //        The rule of thumb here is to wait for some time (this function, like many others, is asynchronous) and call the `getStockpileInfo` function to check whether we actually opened a stockpile menu
 //
+// - waitForPf()
+//   Waits for pathfinding to finish
+//
+// - takeItem(itemName)
+//   Takes an item from the character's inventory (it has the same effect as left-clicking an item)
+//   It may be useful to call this function for map objects' interacting
+//   Returns `true` on success or `false` otherwise
+//
+// - getEquippedItems()
+//   Returns an array of items' names that equipped on the character or `null` if there was an error
+//
+// - equipItem(itemName)
+//   Equips the specified item
+//   Returns `true` on success or `false` otherwise
+//
+// - unequipItem(itemName)
+//   Unequips the specified item (the item will be transferred to the character's inventory)
+//   Returns `true` on success or `false` otherwise
+//
+// - sendAreaChatMessage(msg)
+//   Sends the specified message to the area chat
+//   Returns `true` on success or `false` otherwise
+//
+// - sendPartyChatMessage(msg)
+//   Sends the specified message to the party chat
+//   Returns `true` on success or `false` otherwise
+//
+// - sendVillageChatMessage(msg)
+//   Sends the specified message to the village chat
+//   Returns `true` on success or `false` otherwise
+//
+// - sendPrivateChatMessage(to, msg)
+//   Sends the specified message to the player specified in the `to` parameter
+//   Returns `true` on success or `false` otherwise
+//
 // - logout()
 //   Logs out from the current account
 // 
@@ -280,6 +315,22 @@ function onPlayerFound(id, isKin, coords) {
  */
 function onFlowerMenuOpen(options) {
   return '';
+}
+
+/** It is fired when the user enters a command in the console window
+ * @param {String} input User command
+ */
+function onUserInput(input) {
+  // ignored
+}
+
+/** It is fired when a chat message received from another player
+ * @param {String} chat Chat name
+ * @param {String} from Sender's name (or '???' if it's unknown)
+ * @param {String} msg Message
+ */
+function onChatMessage(chat, from, msg) {
+  // ignored
 }
 
 ///////////////////////
