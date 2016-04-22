@@ -220,6 +220,12 @@ function onGameLoaded(game) {
 //   Right clicks the specified location
 //   NOTE that this function, unlike several others, doesn't use pathfinder
 //
+// - getSpeed()
+//   Returns speed of the character (0 <= speed <= 3 where 0 is "crawl" and 3 is "sprint") or -1 if there was an error
+//
+// - setSpeed(speed)
+//   Sets speed of the character to the specified level (acceptable values -- 0 <= speed <= 3 where 0 is "crawl" and 3 is "sprint")
+//
 // - logout()
 //   Logs out from the current account
 // 
