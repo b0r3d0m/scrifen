@@ -209,6 +209,14 @@ function onGameLoaded(game) {
 //   Sends the specified message to the player specified in the `to` parameter
 //   Returns `true` on success or `false` otherwise
 //
+// - liftObject(id)
+//   Makes the character to lift an object with the specified ID
+//   Returns `true` on success or `false` otherwise
+//
+// - mapRightClick(x, y)
+//   Right clicks the specified location
+//   NOTE that this function, unlike several others, doesn't use pathfinder
+//
 // - logout()
 //   Logs out from the current account
 // 
