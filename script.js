@@ -141,6 +141,9 @@ function onGameLoaded(game) {
 //   The same as `transferItemFrom` function but transfers all objects with the specified name
 //   Returns `true` on success or `false` otherwise
 //
+// - getHP()
+//   Returns an object with `shp` and `hhp` properties represent the soft and hard hitpoints percents correspondingly (or -1 if there was an error)
+//
 // - getStamina()
 //   Returns stamina of the player or -1 if there was an error
 //
