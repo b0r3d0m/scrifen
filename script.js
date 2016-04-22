@@ -1,4 +1,4 @@
-// * This is a test script that deomnstrates some abilities of the Hafen's client scripting
+// * This is a test script that demonstrates some abilities of the Hafen's client scripting
 //
 // It does the following actions:
 // - Logs in using provided login and password (replace them with the actual ones in `onLogin` function below)
