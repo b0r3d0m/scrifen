@@ -226,6 +226,18 @@ function onGameLoaded(game) {
 // - setSpeed(speed)
 //   Sets speed of the character to the specified level (acceptable values -- 0 <= speed <= 3 where 0 is "crawl" and 3 is "sprint")
 //
+// - useMenuAction(hotkeys)
+//   Activates menu action via the specified hotkeys (for example, `g.useMenuAction(['a', 'l'];` activates Adventure -> Lift action)
+//   Returns `true` on success or `false` otherwise
+//
+// - craft(itemName)
+//   Makes the character to craft the specified item
+//   Returns `true` on success or `false` otherwise
+//   NOTE that this function doesn't check that the character actually crafted the specified item
+//
+// - craftAll(itemName)
+//   The same as the `craft` function but uses "Craft all" option instead of "Craft"
+//
 // - logout()
 //   Logs out from the current account
 // 
