@@ -238,6 +238,22 @@ function onGameLoaded(game) {
 // - craftAll(itemName)
 //   The same as the `craft` function but uses "Craft all" option instead of "Craft"
 //
+// - chooseFlowerMenuOption(option)
+//   Chooses the specified flower menu option
+//   Returns `true` on success or `false` otherwise
+//
+// - dropItem(itemName)
+//   Makes the character to drop the specified item from its inventory
+//   Returns `true` on success or `false` otherwise
+//
+// - dropItemFromHand()
+//   Makes the character to drop an item from its hand
+//   Returns `true` on success or `false` otherwise
+//
+// - useItemFromHandOnObject(id)
+//   Makes the character to use an item from its hand on an object with the specified ID
+//   Returns `true` on success or `false` otherwise
+//
 // - logout()
 //   Logs out from the current account
 // 
@@ -340,10 +356,9 @@ function onPlayerFound(id, isKin, coords) {
 
 /** It is fired when the flower menu appears (the one that opens after right clicking an object)
  * @param {Array} options Available flower menu options
- * @return {String} Text of the option to select (for example, "Pick cone"), or an empty string if you don't want to select anything
  */
 function onFlowerMenuOpen(options) {
-  return '';
+  // ignored
 }
 
 /** It is fired when the user enters a command in the console window
