@@ -254,6 +254,9 @@ function onGameLoaded(game) {
 //   Makes the character to use an item from its hand on an object with the specified ID
 //   Returns `true` on success or `false` otherwise
 //
+// - getBarrelContent(id)
+//   Returns a type of the barrel's content ('water', 'milk', 'honey' etc) or 'empty' if it's empty. Returns null if there was an error
+//
 // - logout()
 //   Logs out from the current account
 // 
