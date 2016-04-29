@@ -113,10 +113,13 @@ function onGameLoaded(game) {
 //   Makes the character travel to its hearth fire
 //
 // - getMapObjects(name)
-//   Returns an array of map objects with the specified name (each of them has `name`, `id` and `coords` properties)
+//   Returns an array of map objects with the specified name (each of them has `name`, `fullName`, `id` and `coords` properties)
+//
+// - getMapObjectsByFullName(fullName)
+//   The same as the `getMapObjects` function but looking for a fullName instead of name (for example, `gfx/terobjs/plants/carrot` instead of `carrot`) -- may be useful to distinguish between growing and laying objects
 //
 // - getAllMapObjects()
-//   Returns an array of map objects (each of them has `name`, `id` and `coords` properties)
+//   Returns an array of map objects (each of them has `name`, `fullName`, `id` and `coords` properties)
 //
 // - mapObjectRightClick(id)
 //   Clicks an object with the specified ID via the right mouse button
@@ -256,6 +259,13 @@ function onGameLoaded(game) {
 //
 // - getBarrelContent(id)
 //   Returns a type of the barrel's content ('water', 'milk', 'honey' etc) or 'empty' if it's empty. Returns null if there was an error
+//
+// - getBarrelLiters(id)
+//   Returns amount of liquid inside a barrel with the specified ID or null if there was an error
+//   NOTE that this function right-clicks the barrel and waits 5 seconds for the "Barrel" window to appear
+//
+// - getGrowthStage(id)
+//   Returns growth stage of a plant with the specified ID or -1 if there was an error
 //
 // - logout()
 //   Logs out from the current account
