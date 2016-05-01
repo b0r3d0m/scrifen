@@ -267,6 +267,9 @@ function onGameLoaded(game) {
 // - getGrowthStage(id)
 //   Returns growth stage of a plant with the specified ID or -1 if there was an error
 //
+// - getHighlightedMapObjects()
+//   Returns an array of highlighted map objects (each of them has `name`, `fullName`, `id` and `coords` properties)
+//
 // - logout()
 //   Logs out from the current account
 // 
@@ -387,6 +390,19 @@ function onUserInput(input) {
  * @param {String} msg Message
  */
 function onChatMessage(chat, from, msg) {
+  // ignored
+}
+
+/** It is fired when a new object highlighted via ALT + LMB
+ * @param {Object} obj Highlighted map object
+ * @param {String} obj.name Basename of the map object's resource
+ * @param {String} obj.fullName Full name of the map object's resource
+ * @param {Number} obj.id Map object's ID
+ * @param {Object} obj.coords Coordinates of the map object
+ * @param {Number} obj.coords.x x coordinate of the map object
+ * @param {Number} obj.coords.y y coordinate of the map object
+ */
+function onMapObjectHighlight(obj) {
   // ignored
 }
 
