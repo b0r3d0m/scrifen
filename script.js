@@ -270,6 +270,9 @@ function onGameLoaded(game) {
 // - getHighlightedMapObjects()
 //   Returns an array of highlighted map objects (each of them has `name`, `fullName`, `id` and `coords` properties)
 //
+// - waitForTaskToFinish()
+//   Waits for the current task to finish (until hourglass is gone)
+//
 // - logout()
 //   Logs out from the current account
 // 
