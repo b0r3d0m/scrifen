@@ -123,6 +123,7 @@ function onGameLoaded(game) {
 //
 // - mapObjectRightClick(id)
 //   Clicks an object with the specified ID via the right mouse button
+//   NOTE That you can't use this function for some specific objects (for example, tables -- use `openTable` function instead)
 //   Returns `true` on success or `false` otherwise
 //
 // - transferItem(name)
@@ -272,6 +273,26 @@ function onGameLoaded(game) {
 //
 // - waitForTaskToFinish()
 //   Waits for the current task to finish (until hourglass is gone)
+//
+// - useItemFromHandOnCoords(x, y)
+//   Uses an item from hand on the specified coords (you can take it to your hand via `takeItem` function)
+//   Returns `true` on success or `false` otherwise
+//
+// - dropItemFromHandToWindow(windowName)
+//   Drops an item from hand to the specified window (useful when having a butcket in your hands)
+//   Returns `true` on success or `false` otherwise
+//
+// - takeItemFromWindow(windowName, itemName)
+//   The same as the `takeItem` function but takes an item from the specified window
+//   Returns `true` on success or `false` otherwise
+//
+// - feastEat(itemName)
+//   Clicks a "Feast" button and then eats the specified item (NOTE that you should open a table before using this function via the `openTable` function, see below)
+//   Returns `true` on success or `false` otherwise
+//
+// - openTable(id)
+//   Opens a table with the specified ID
+//   Returns `true` on success or `false` otherwise
 //
 // - logout()
 //   Logs out from the current account
