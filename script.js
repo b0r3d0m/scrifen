@@ -50,7 +50,7 @@ var autoWalkingTimerId = null;
 /**
  * It is fired when the client started
  * @return {Object} options - Object that contains general options for the client
- * @return {String} options.renderingEnabled - Set this option to `false` if you want to disable rendering
+ * @return {Boolean} options.renderingEnabled - Set this option to `false` if you want to disable rendering
  */
 function onClientStarted() {
   var options = {
