@@ -48,6 +48,18 @@ var autoWalkingTimerId = null;
 //      Just do nothing if you don't want to process such events
 
 /**
+ * It is fired when the client started
+ * @return {Object} options - Object that contains general options for the client
+ * @return {String} options.renderingEnabled - Set this option to `false` if you want to disable rendering
+ */
+function onClientStarted() {
+  var options = {
+    renderingEnabled: true
+  };
+  return options;
+}
+
+/**
  * It is fired when the login screen appeared
  * @return {Object} credentials - Object that contains information about login and password to log in with
  * @return {String} credentials.login - The actual login
