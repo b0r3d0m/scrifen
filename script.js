@@ -383,7 +383,7 @@ function onCreatureFound(id, name, coords) {
 
 /** It is fired when another player was encountered (once for each of them)
  * @param {Number} id ID of the player
- * @param {String} name Name of the player
+ * @param {Boolean} isKin Indicates whether the player is in the kin list or not
  * @param {Object} coords Coordinates of the player
  * @param {Number} coords.x x coordinate of the creature
  * @param {Number} coords.y y coordinate of the creature
