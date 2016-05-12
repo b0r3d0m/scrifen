@@ -306,6 +306,16 @@ function onGameLoaded(game) {
 //   Opens a table with the specified ID
 //   Returns `true` on success or `false` otherwise
 //
+// - getCharInvSize()
+//   Returns an object with the `width` and `height` properties set to the appropriate cells count or null if there was an error
+//
+// - getCharInvCellsUsageMatrix()
+//   Returns a 2D array with 0 and 1 values representing free and used cells correspondingly or null if there was an error
+//   You can access specific cell via the Cartesian coordinate system syntax where (0, 0) is the top-left cell
+//
+// - getFreeCharInvCellsCount()
+//   Returns a count of free cells in the character's inventory or -1 if there was an error
+//
 // - logout()
 //   Logs out from the current account
 // 
