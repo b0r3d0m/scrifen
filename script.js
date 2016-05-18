@@ -316,6 +316,14 @@ function onGameLoaded(game) {
 // - getFreeCharInvCellsCount()
 //   Returns a count of free cells in the character's inventory or -1 if there was an error
 //
+// - getFuelLevel(id, windowName)
+//   Returns fuel level of an object with the specified ID or null if there was an error
+//   NOTE that this function right-clicks the object and waits several seconds for the corresponding window to appear
+//
+// - getWaterLevel(id, windowName)
+//   Returns water level of an object with the specified ID or null if there was an error
+//   NOTE that this function right-clicks the object and waits several seconds for the corresponding window to appear
+//
 // - logout()
 //   Logs out from the current account
 // 
